@@ -43,7 +43,7 @@ class Graph():
  
 
 with open("Output/outDijkstra.csv", "w", encoding='utf-8') as output:
-    files = ['10.txt', '25.txt', '50.txt','75.txt','100.txt','150.txt','200.txt','250.txt','300.txt','400.txt','500.txt','650.txt']
+    files = ['800.txt','1000.txt','1500.txt']
     ##files = ['10.txt', '25.txt', '50.txt','75.txt','100.txt','150.txt','200.txt','250.txt','300.txt','400.txt','500.txt','650.txt','800.txt','1000.txt','1500.txt']
     for dataSet in files:
 
@@ -63,12 +63,12 @@ with open("Output/outDijkstra.csv", "w", encoding='utf-8') as output:
         g.graph = l
         tempo = 0
         output.write("DataSet;TempoMedio;\n")
-        for execution in range(0, 10):
+        for execution in range(0, 3):
             start = time.perf_counter()
             for dij in range(0, V):
                 g.dijkstra(dij)
             end = time.perf_counter()
             tempo =+ end -start
             #print('tempo', end - start)
-        output.write(f"{dataSet};{tempo/10};\n")
+        output.write(f"{dataSet};{tempo/3};\n")
 
